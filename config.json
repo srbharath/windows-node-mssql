@@ -1,17 +1,25 @@
-﻿{
+{
     "dbName": "node-mssql-crud-api",
     "dbConfig": {
-        "server": "localhost",
+      "server": "sqlserver",
+      "options": {
+        "port": 1433,
+        "encrypt": true,
+        "trustServerCertificate": true
+      },
+      "authentication": {
+        "type": "default",
         "options": {
-            "port": 1433,
-            "trustServerCertificate": true
-        },
-        "authentication": {
-            "type": "default",
-            "options": {
-                "userName": "sa",
-                "password": ""
-            }
+          "userName": "sa",
+          "password": "Password@123"
         }
+      },
+      "pool": {
+        "max": 10,
+        "min": 0,
+        "idleTimeoutMillis": 30000
+      },
+      "connectionString": "mssql://sa:Password@123@sqlserver/master?encrypt=true&trustServerCertificate=true"
     }
-}
+  }
+  
